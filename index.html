@@ -9,13 +9,13 @@
     <style>
         /* ====== Global Styles ====== */
         :root {
-            --primary: #ff3d7e; /* Changed to pinkish tone */
+            --primary: #ff3d7e;
             --primary-dark: #cc0047;
             --primary-light: #ff8fb3;
-            --text: #2b2b2b;
-            --light-text: #949494;
+            --text: #000000;
+            --light-text: #5e5e5e;
             --bg-light: #ffffff;
-            --white: #f1f1f1;
+            --white: #ffffff;
             --black: #000000;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -47,11 +47,11 @@
         }
 
         section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
         }
 
-        /* ====== Header ====== */
+        /* ====== Header & Navigation ====== */
         header {
             background-color: rgba(255, 255, 255, 0.95);
             box-shadow: var(--shadow);
@@ -72,15 +72,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
             transition: var(--transition);
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary);
-            animation: slideRight 0.8s ease-out;
         }
 
         .nav-links {
@@ -120,6 +119,15 @@
             width: 100%;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            background: none;
+            border: none;
+        }
+
         /* ====== Hero Section ====== */
         .hero-section {
             height: 100vh;
@@ -140,20 +148,19 @@
 
         .hero-text {
             flex: 1;
-            animation: slideRight 0.8s ease-out;
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             line-height: 1.2;
             color: var(--primary);
         }
 
         .hero-text p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
-            color: var #bebebe;
+            color: var(--text);
             max-width: 600px;
         }
 
@@ -161,19 +168,17 @@
             flex: 1;
             display: flex;
             justify-content: center;
-            animation: slideLeft 0.8s ease-out;
         }
 
         .hero-image img {
             max-width: 100%;
             height: auto;
             border-radius: 20px;
-           
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 12px 30px;
             background: var(--primary);
             color: white;
             border-radius: 50px;
@@ -181,6 +186,9 @@
             font-weight: 600;
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn:hover {
@@ -191,181 +199,132 @@
 
         .stats {
             display: flex;
-            gap: 30px;
-            margin-top: 50px;
-            animation: slideUp 0.8s ease-out 0.3s both;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
         }
 
         .stat-item {
             background: var(--primary);
             color: var(--white);
-            padding: 25px;
+            padding: 20px;
             border-radius: 10px;
             text-align: center;
-            min-width: 180px;
+            min-width: 120px;
             box-shadow: 0 10px 20px rgba(255, 107, 157, 0.2);
             transition: var(--transition);
         }
 
         .stat-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(255, 107, 157, 0.3);
         }
 
         .stat-item h3 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 5px;
         }
 
         .stat-item p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
         }
 
-
         /* ====== About Section ====== */
-         /* About Section Styles */
-    .about {
-        background-color: #fff9f9;
-        padding: 100px 0;
-    }
-    
-    .about-content {
-        display: flex;
-        align-items: center;
-        gap: 60px;
-    }
-    
-    .about-image {
-        flex: 1;
-        position: relative;
-        animation: fadeIn 1s ease-out;
-    }
-    
-    .profile-img {
-        width: 100%;
-        border-radius: 20px;
-        transition: transform 0.5s ease;
-    }
-    
-    .about-image:hover .profile-img {
-        transform: scale(1.02);
-    }
-    
-    .experience-badge {
-        position: absolute;
-        bottom: -20px;
-        right: -20px;
-        background: var(--primary);
-        color: white;
-        padding: 20px;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
-        animation: pulse 2s infinite;
-    }
-    
-    .experience-badge span {
-        font-size: 1.8rem;
-        font-weight: 700;
-        display: block;
-    }
-    
-    .about-text {
-        flex: 1;
-        animation: slideUp 1s ease-out;
-    }
-    
-    .about-text h3 {
-        font-size: 2rem;
-        color: var(--primary);
-        margin-bottom: 20px;
-    }
-    
-    .about-text p {
-        color: var(--light-text);
-        margin-bottom: 30px;
-        line-height: 1.8;
-    }
-    
-    .about-details {
-        margin: 30px 0;
-    }
-    
-    .detail-item {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 25px;
-        align-items: flex-start;
-    }
-    
-    .detail-item i {
-        font-size: 1.5rem;
-        color: var(--primary);
-        margin-top: 5px;
-    }
-    
-    .detail-item h4 {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-        color: var(--text);
-    }
-    
-    /* Animations */
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    
-    @keyframes slideUp {
-        from { 
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to { 
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 992px) {
-        .about-content {
-            flex-direction: column;
-        }
-        
-        .about-image {
-            margin-bottom: 50px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .experience-badge {
-            right: 0;
-        }
-    }
-    
-    @media (max-width: 576px) {
         .about {
-            padding: 60px 0;
+            background-color: #fff9f9;
         }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
         }
-        
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover .profile-img {
+            transform: scale(1.02);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .experience-badge span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--light-text);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-details {
+            margin: 30px 0;
+        }
+
         .detail-item {
-            flex-direction: column;
-            gap: 10px;
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
         }
-    }
+
+        .detail-item i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+        .detail-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .detail-item p {
+            margin-bottom: 0;
+        }
+
+        .divider {
+            background-color: #684d4d;
+            height: 1px;
+            margin: 15px 0;
+            opacity: 0.2;
+        }
+
         /* ====== Services Section ====== */
         .services {
             background-color: var(--white);
@@ -373,45 +332,34 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
-            overflow: hidden;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 15px;
-            animation: slideUp 0.8s ease-out;
         }
 
         .section-title p {
             color: var(--light-text);
             max-width: 700px;
             margin: 0 auto;
-            animation: slideUp 0.8s ease-out 0.2s both;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .service-card {
             background: var(--white);
-            padding: 40px 30px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
-            animation: fadeIn 0.8s ease-out;
-            transform: translateY(20px);
-            opacity: 0;
-        }
-
-        .service-card.animate {
-            transform: translateY(0);
-            opacity: 1;
         }
 
         .service-card:hover {
@@ -420,9 +368,9 @@
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--primary);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             transition: var(--transition);
         }
 
@@ -431,7 +379,7 @@
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
             color: var(--text);
         }
@@ -439,34 +387,27 @@
         .service-card p {
             color: var(--light-text);
             line-height: 1.8;
+            font-size: 0.95rem;
         }
 
-        /* ====== Portfolio/Gallery Section ====== */
+        /* ====== Portfolio Section ====== */
         .portfolio {
             background-color: var(--bg-light);
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .portfolio-item {
             position: relative;
             border-radius: 15px;
             overflow: hidden;
-            height: 300px;
+            height: 280px;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            animation: fadeIn 0.8s ease-out;
-            transform: scale(0.95);
-            opacity: 0;
-        }
-
-        .portfolio-item.animate {
-            transform: scale(1);
-            opacity: 1;
         }
 
         .portfolio-item:hover {
@@ -482,7 +423,7 @@
         }
 
         .portfolio-item:hover .portfolio-img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .portfolio-overlay {
@@ -495,7 +436,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 30px;
+            padding: 25px;
             color: var(--white);
             opacity: 0;
             transition: var(--transition);
@@ -506,7 +447,7 @@
         }
 
         .portfolio-overlay h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
             transform: translateY(20px);
             transition: var(--transition);
@@ -517,6 +458,7 @@
             transform: translateY(20px);
             transition: var(--transition);
             transition-delay: 0.2s;
+            font-size: 0.9rem;
         }
 
         .portfolio-item:hover .portfolio-overlay h3,
@@ -526,76 +468,164 @@
 
         /* ====== Testimonials Section ====== */
         .testimonials {
-            background-color: var(--white);
+            background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fc 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
         }
-
+        
         .testimonial-slider {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 30px;
-            padding-bottom: 20px;
+            padding: 30px 20px;
             -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
-
+        
+        .testimonial-slider::-webkit-scrollbar {
+            display: none;
+        }
+        
         .testimonial-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            min-width: 400px;
+            flex: 0 0 320px;
             scroll-snap-align: start;
-            transition: var(--transition);
-            animation: fadeIn 0.8s ease-out;
+            background: linear-gradient(145deg, #ffffff 0%, #fff9fb 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(0deg);
+            position: relative;
+            border-top: 3px solid #ff6b9d;
+            border-bottom: 3px solid #ff6b9d;
+            overflow: hidden;
         }
-
+        
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,107,157,0.05) 0%, rgba(255,255,255,0) 50%);
+            z-index: -1;
+        }
+        
         .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(5deg) translateY(-10px);
+            box-shadow: 0 25px 50px rgba(255, 107, 157, 0.2);
         }
-
+        
         .testimonial-header {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            transform: translateZ(30px);
         }
-
+        
         .testimonial-img {
             width: 70px;
             height: 70px;
             border-radius: 50%;
             overflow: hidden;
+            border: 3px solid #ff8fb3;
             margin-right: 20px;
-            border: 3px solid var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
         }
-
-        .testimonial-img img {
+        
+        .testimonial-card:hover .testimonial-img {
+            transform: scale(1.1);
+            border-color: #ff6b9d;
+        }
+        
+        .client-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
-        .testimonial-info h4 {
-            font-size: 1.2rem;
-            color: var(--text);
+        
+        .client-info {
+            flex: 1;
+        }
+        
+        .client-name {
+            font-size: 1.3rem;
+            color: #333;
             margin-bottom: 5px;
+            font-weight: 600;
         }
-
-        .testimonial-info p {
-            color: var(--light-text);
+        
+        .client-role {
+            color: #ff6b9d;
+            font-weight: 600;
             font-size: 0.9rem;
+            letter-spacing: 0.5px;
         }
-
+        
         .testimonial-rating {
-            color: #f1c40f;
-            margin-bottom: 15px;
+            margin: 15px 0;
+            transform: translateZ(20px);
+        }
+        
+        .star {
+            color: #ffc107;
+            font-size: 1.3rem;
+            margin-right: 5px;
+            text-shadow: 0 2px 5px rgba(255, 193, 7, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover .star {
+            animation: pulse 0.5s ease infinite alternate;
+        }
+        
+        .testimonial-quote {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+            position: relative;
+            padding: 0 10px;
+            transform: translateZ(10px);
+        }
+        
+        .quote-icon {
+            color: #ff8fb3;
+            opacity: 0.5;
             font-size: 1.2rem;
         }
-
-        .testimonial-text {
-            color: var(--light-text);
-            font-style: italic;
-            line-height: 1.8;
+        
+        .fa-quote-left {
+            margin-right: 10px;
+        }
+        
+        .fa-quote-right {
+            margin-left: 10px;
+        }
+        
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ffb3d1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #ff6b9d;
+            transform: scale(1.2);
         }
 
         /* ====== Contact Section ====== */
@@ -603,23 +633,60 @@
             background-color: var(--bg-light);
         }
 
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #ff649a, #ff256e);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-item {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+        }
+
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
             background: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: var(--shadow);
-            animation: slideUp 0.8s ease-out;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .form-row {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
         .form-row .form-group {
@@ -628,7 +695,7 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--text);
             font-weight: 500;
         }
@@ -636,7 +703,7 @@
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 1rem;
@@ -657,16 +724,16 @@
         }
 
         .submit-btn {
+            width: 100%;
             background: var(--primary);
             color: var(--white);
             border: none;
-            padding: 15px 40px;
+            padding: 15px;
             font-size: 1rem;
             border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
-            display: inline-block;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -681,24 +748,20 @@
         footer {
             background: linear-gradient(135deg, #ff2772, #810016);
             color: var(--white);
-            padding: 80px 0 30px;
+            padding: 60px 0 20px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-about {
-            animation: slideRight 0.8s ease-out;
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         .footer-logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--white);
         }
 
@@ -706,6 +769,7 @@
             color: #e0e0e0;
             line-height: 1.8;
             margin-bottom: 20px;
+            font-size: 0.95rem;
         }
 
         .social-links {
@@ -715,30 +779,26 @@
 
         .social-links a {
             color: var(--white);
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
-            font-size: 1.2rem;
+            font-size: 1rem;
             background: rgba(255, 255, 255, 0.1);
         }
 
         .social-links a:hover {
             background: var(--white);
             color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .footer-links {
-            animation: slideUp 0.8s ease-out 0.2s both;
+            transform: translateY(-3px);
         }
 
         .footer-links h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             color: var(--white);
         }
 
@@ -755,6 +815,7 @@
             text-decoration: none;
             transition: var(--transition);
             display: inline-block;
+            font-size: 0.95rem;
         }
 
         .footer-links a:hover {
@@ -762,37 +823,33 @@
             transform: translateX(5px);
         }
 
-        .footer-contact {
-            animation: slideLeft 0.8s ease-out;
-        }
-
         .footer-contact h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             color: var(--white);
         }
 
         .footer-contact p {
             color: #bdc3c7;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
+            font-size: 0.95rem;
         }
 
         .footer-contact i {
-            margin-right: 15px;
+            margin-right: 10px;
             color: var(--white);
-            font-size: 1.2rem;
-            width: 25px;
+            font-size: 1rem;
+            width: 20px;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #bdc3c7;
-            font-size: 0.9rem;
-            animation: fadeIn 0.8s ease-out 0.4s both;
+            font-size: 0.85rem;
         }
 
         /* ====== Animations ====== */
@@ -840,10 +897,16 @@
             100% { transform: scale(1); }
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+            40% {transform: translateY(-10px);} 
+            60% {transform: translateY(-5px);} 
+        }
+
         /* ====== Responsive Styles ====== */
         @media (max-width: 1200px) {
             .hero-text h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
             
             .hero-image img {
@@ -853,7 +916,57 @@
 
         @media (max-width: 992px) {
             section {
-                padding: 80px 0;
+                padding: 70px 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 40px;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .experience-badge {
+                right: 0;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 30px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                margin-left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
             }
             
             .hero-content {
@@ -865,33 +978,12 @@
                 margin-bottom: 40px;
             }
             
-            .stats {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            
-            .testimonial-card {
-                min-width: 350px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-            
             .hero-text h1 {
                 font-size: 2.5rem;
+            }
+            
+            .stats {
+                justify-content: center;
             }
             
             .form-row {
@@ -900,12 +992,16 @@
             }
             
             .testimonial-card {
-                min-width: 300px;
-                padding: 30px;
+                min-width: 280px;
+                padding: 25px;
             }
         }
 
         @media (max-width: 576px) {
+            section {
+                padding: 60px 0;
+            }
+            
             .hero-text h1 {
                 font-size: 2.2rem;
             }
@@ -915,12 +1011,12 @@
             }
             
             .stat-item {
-                min-width: 140px;
-                padding: 20px;
+                min-width: 100px;
+                padding: 15px;
             }
             
             .stat-item h3 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .section-title h2 {
@@ -934,42 +1030,9 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                transform: translateY(-150%);
-                transition: var(--transition);
-                z-index: 999;
-            }
             
-            .nav-links.active {
-                transform: translateY(0);
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
+            .contact-box {
+                max-width: 100%;
             }
         }
     </style>
@@ -980,17 +1043,17 @@
         <div class="container">
             <nav>
                 <div class="logo">Megha Makeup Studio</div>
-                <ul class="nav-links">
-                    <li class="hide-on-mobile"><a href="#home">Home</a></li>
-                    <li class="hide-on-mobile"><a href="#about">About</a></li>
-                    <li class="hide-on-mobile"><a href="#services">Services</a></li>
-                    <li class="hide-on-mobile"><a href="#portfolio">Portfolio</a></li>
-                    <li class="hide-on-mobile"><a href="#testimonials">Testimonials</a></li>
-                    <li class="hide-on-mobile"><a href="#contact">Contact</a></li>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-menu-btn" aria-label="Toggle navigation">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -1006,15 +1069,15 @@
                     
                     <div class="stats">
                         <div class="stat-item">
-                            <h3>3+</h3>
+                            <h3 data-count="3">0+</h3>
                             <p>Years Experience</p>
                         </div>
                         <div class="stat-item">
-                            <h3>50+</h3>
+                            <h3 data-count="50">0+</h3>
                             <p>Happy Clients</p>
                         </div>
                         <div class="stat-item">
-                            <h3>100%</h3>
+                            <h3 data-count="100">0%</h3>
                             <p>Client Satisfaction</p>
                         </div>
                     </div>
@@ -1027,59 +1090,59 @@
     </section>
 
     <!-- About Section -->
-<section id="about" class="about">
-    <div class="container">
-        <div class="section-title">
-            <h2>About Me</h2>
-            <p>My journey in the world of beauty and makeup</p>
-        </div>
-        
-        <div class="about-content">
-            <div class="about-image">
-                <img src="image/deep.jpeg" alt="Megha Makeup Artist" class="profile-img">             
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>My journey in the world of beauty and makeup</p>
             </div>
             
-            <div class="about-text">
-                <h3>Professional Makeup Artist in Amta</h3>
-                <p>Hello! I'm Megha, a passionate makeup artist specializing in bridal, party, and fashion makeup. With over 3 years+ of experience, I've had the privilege of working with 50+ clients, helping them look and feel their most beautiful.</p>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="image/retouch_2025041119200811jh.png" alt="Megha Makeup Artist" class="profile-img">
+                    <div class="experience-badge">
+                </div>
                 
-                <div class="about-details">
-                    <div class="detail-item" style="background-color: #684d4d; padding: 1px; border-radius: 8px;"></div>
-                    <div class="detail-item">
-                        <i class="fas fa-palette" style="margin-right: 10px;"></i>
-                        <div>
-                            <h4 style="display: inline;">Specializations</h4>
-                            <p>Bridal • Party • Fashion • Editorial • Nude Looks • Facial & Clean-up • Hair Color & Highlights • Mehendi Design • Hair Cutting • Eyebrow Threading • etc.</p>
+                <div class="about-text">
+                    <h2>Professional Makeup Artist in Amta</h2>
+                    <p>Hello! I'm Megha, a passionate makeup artist specializing in bridal, party, and fashion makeup. With over 3 years+ of experience, I've had the privilege of working with 50+ clients, helping them look and feel their most beautiful.</p>
+                    
+                    <div class="about-details">
+                        <div class="divider"></div>
+                        <div class="detail-item">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <h4>Specializations</h4>
+                                <p>Bridal • Party • Fashion • Editorial • Nude Looks • Facial & Clean-up • Hair Color & Highlights • Mehendi Design • Hair Cutting • Eyebrow Threading • etc.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="divider"></div>
+                        <div class="detail-item">
+                            <i class="fas fa-certificate" style="color: #ff3d7e; animation: bounce 2s infinite;"></i>
+                            <div>
+                                <h4>Certifications</h4>
+                                <p>Professional Makeup Diploma • Nataji Subhas Foundation Certified • Certified by ISO 29993:2017 • ISO 9001:2015 • IAF • UASL Training.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="divider"></div>
+                        <div class="detail-item">
+                            <i class="fas fa-heart" style="color: #ff3d7e; animation: bounce 2s infinite;"></i>
+                            <div>
+                                <h4>Philosophy</h4>
+                                <p>I believe makeup should enhance your natural beauty, not mask it. Every face is my canvas!</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="detail-item" style="background-color: #684d4d; padding: 1px; border-radius: 8px;"></div>
-                    <div class="detail-item"></div>
-                        <i class="fas fa-certificate" style="font-size: 2rem; color: #ff3d7e; animation: bounce 2s infinite; margin-right: 10px;"></i>
-                        <div>
-                            <h4 style="display: inline;">Certifications</h4>
-                            <p>Professional Makeup Diploma • Nataji Subhas Foundation Certified • Certified by ISO 29993:2017 • ISO 9001:2015 • IAF • UASL Training.</p>
-                        </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="#contact" class="btn">Book Consultation</a>
                     </div>
-                    
-                    <div class="detail-item" style="background-color: #664a4a; padding: 1px; border-radius: 8px;"></div>
-                    <div class="detail-item"></div>
-                        <i class="fas fa-heart" style="font-size: 2rem; color: #ff3d7e; animation: bounce 2s infinite; margin-right: 10px;"></i>
-                        <div>
-                            <h4 style="display: inline;">Philosophy</h4>
-                            <p>I believe makeup should enhance your natural beauty, not mask it. Every face is my canvas!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-                </div>
-                <div style="display: flex; justify-content: center; align-items: center; margin-top: 1%;">
-                    <a href="#contact" class="btn">Book Consultation</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -1128,7 +1191,7 @@
                     <div class="service-icon">
                         <i class="fas fa-cut"></i>
                     </div>
-                    <h3>Hair Services/Eyebrow Threading</h3>
+                    <h3>Hair Services</h3>
                     <p>Hair styling, coloring, cutting and treatments to complete your perfect look.</p>
                 </div>
             </div>
@@ -1197,111 +1260,169 @@
                 <p>What my clients say about my work</p>
             </div>
             <div class="testimonial-slider">
+                <!-- Testimonial Card 1 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
                             <img src="image/IMG-20250411-WA0007.jpg" alt="Priya Sharma">
                         </div>
-                        <div class="testimonial-info">
-                            <h4>প্রিয়া মণ্ডল</h4>
-                            <p>ব্রাইড (কনে)</p>
+                        <div class="client-info">
+                            <h4 class="client-name">প্রিয়া মণ্ডল</h4>
+                            <p class="client-role">ব্রাইড (কনে)</p>
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        ★★★★★
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
                     </div>
-                    <div class="testimonial-text">
+                    <div class="testimonial-quote">
                         <p>মেঘা আমার ব্রাইডাল মেকআপে দারুণ কাজ করেছে! আমি যেমন লুক চেয়েছিলাম, সে ঠিক তেমনটাই বুঝে নিখুঁতভাবে করে দিয়েছে। আমার বিশেষ দিনে নিজেকে খুব সুন্দর লাগছিল। মেকআপটা পুরোদিন টিকে ছিল আর ছবিতেও একদম পারফেক্ট দেখাচ্ছিল। আমি ওকে অবশ্যই সুপারিশ করবো!</p>
                     </div>
                 </div>
+
+                <!-- Testimonial Card 2 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
                             <img src="image/IMG-20250411-WA0013.jpg" alt="Ananya Das">
                         </div>
-                        <div class="testimonial-info">
-                            <h4>অনন্যা দাস</h4>
-                            <p>ফ্যাশন মডেল</p>
+                        <div class="client-info">
+                            <h4 class="client-name">অনন্যা দাস</h4>
+                            <p class="client-role">ফ্যাশন মডেল</p>
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        ★★★★★
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
                     </div>
-                    <div class="testimonial-text">
+                    <div class="testimonial-quote">
                         <p>আমি অনেক মেকআপ আর্টিস্টের সঙ্গে কাজ করেছি, কিন্তু মেঘার খুঁটিনাটি নজর দেওয়ার ক্ষমতা সত্যিই অসাধারণ। সে আমার পোর্টফোলিও শুটের জন্য এমন এক দারুণ লুক তৈরি করেছিল, যেটা পুরো থিমের সঙ্গে একেবারে মানানসই ছিল। ছবিতে মেকআপটা অসাধারণভাবে ফুটে উঠেছিল!</p>
                     </div>
                 </div>
+
+                <!-- Testimonial Card 3 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
                             <img src="image/IMG-20250411-WA0011.jpg" alt="Riya Chatterjee">
                         </div>
-                        <div class="testimonial-info">
-                            <h4>রিয়া চ্যাটার্জী</h4>
-                            <p>রিসেপশন ক্লায়েন্ট</p>
+                        <div class="client-info">
+                            <h4 class="client-name">রিয়া চ্যাটার্জী</h4>
+                            <p class="client-role">রিসেপশন ক্লায়েন্ট</p>
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        ★★★★★
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
                     </div>
-                    <div class="testimonial-text">
+                    <div class="testimonial-quote">
                         <p>আমার বোনের বিয়ের রিসেপশনে মেঘা আমার জন্য একদম পারফেক্ট গ্ল্যামারাস অথচ ন্যাচারাল লুক তৈরি করেছিল। পুরো রাত সবাই আমার মেকআপের প্রশংসা করেছে! ও খুবই প্রতিভাবান আর পেশাদার। আমি আবারও ওকে বুক করবো, নিশ্চয়ই।</p>
                     </div>
                 </div>
+
+                <!-- Testimonial Card 4 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
                             <img src="image/WhatsApp Image 2025-04-11 at 10.22.57_9cc26543.jpg" alt="Tanushree Ghosh">
                         </div>
-                        <div class="testimonial-info">
-                            <h4>তনুশ্রী ঘোষ</h4>
-                            <p>রিসেপশন ক্লায়েন্ট</p>
+                        <div class="client-info">
+                            <h4 class="client-name">তনুশ্রী ঘোষ</h4>
+                            <p class="client-role">রিসেপশন ক্লায়েন্ট</p>
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        ★★★★★
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
                     </div>
-                    <div class="testimonial-text">
+                    <div class="testimonial-quote">
                         <p>একটি ফ্যামিলি ফাংশনের জন্য মেঘার কাছ থেকে মেকআপ করিয়েছিলাম। ও খুব যত্ন নিয়ে কাজ করে আর আমার চেহারার সাথে মানিয়ে এমন একটা লুক তৈরি করে যা সবার নজর কাড়ে। ধন্যবাদ মেঘা, তোমার স্পর্শে আমি আলাদা লাগছিলাম!</p>
                     </div>
                 </div>
+
+                <!-- Testimonial Card 5 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
                             <img src="image/WhatsApp Image 2025-04-11 at 10.23.40_4f1660b6.jpg" alt="Sudeshna Mitra">
                         </div>
-                        <div class="testimonial-info">
-                            <h4>তিথি মণ্ডল</h4>
-                            <p>ব্রাইড (কনে)</p>
+                        <div class="client-info">
+                            <h4 class="client-name">তিথি মণ্ডল</h4>
+                            <p class="client-role">ব্রাইড (কনে)</p>
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        ★★★★★
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
                     </div>
-                    <div class="testimonial-text">
-                        <p>প্রথমবারের মতো ফটোশুট করাতে যাচ্ছিলাম, একটু নার্ভাস ছিলাম। কিন্তু মেঘার মেকআপে আমি এতটাই কনফিডেন্ট অনুভব করছিলাম যে ক্যামেরার সামনে দাঁড়ানো অনেক সহজ হয়ে গেল! ছবিগুলো দারুণ হয়েছে, সব কৃতিত্ব ওর নিখুঁত মেকআপের।</p>
+                    <div class="testimonial-quote">
+                        <p>আমার বিয়ের দিনে আমার মেকআপটা খুবই সুন্দর আর নিখুঁতভাবে হয়েছে। কিন্তু মেঘার মেকআপে আমি এতটাই কনফিডেন্ট অনুভব করছিলাম যে আমার দিনটা খুবই সুন্দর গিয়েছিল! সব ছবিগুলো দারুণ হয়েছে, সবাই সুন্দর বলেছে। সব কৃতিত্ব ওর নিখুঁত মেকআপের।</p>
                     </div>
                 </div>
+
+                <!-- Testimonial Card 6 -->
                 <div class="testimonial-card">
                     <div class="testimonial-header">
                         <div class="testimonial-img">
                             <img src="image/IMG-20250411-WA0014.jpg" alt="Madhurima Pal">
                         </div>
-                        <div class="testimonial-info">
-                            <h4>সোনিয়া মেটে</h4>
-                            <p>হেয়ার স্পা ও ট্রিটমেন্ট ক্লায়েন্ট</p>
+                        <div class="client-info">
+                            <h4 class="client-name">সোনিয়া মেটে</h4>
+                            <p class="client-role">হেয়ার স্পা ও ট্রিটমেন্ট ক্লায়েন্ট</p>
                         </div>
                     </div>
                     <div class="testimonial-rating">
-                        ★★★★★
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
                     </div>
-                    <div class="testimonial-text">
+                    <div class="testimonial-quote">
                         <p>আমার চুলে অনেকদিন ধরে প্রাণ ছিল না, কিন্তু মেঘার হেয়ার স্পা ট্রিটমেন্টে চুল একেবারে নতুন প্রাণ ফিরে পেয়েছে! সার্ভিসও খুব রিল্যাক্সিং ছিল। এখন নিয়মিতই ওর কাছে যাবো।</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 7 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-img">
+                            <img src="https://media-hosting.imagekit.io/c38b3ede45ed4eef/istockphoto-1395880805-612x612.jpg?Expires=1839387154&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=e9u2DE6yzb37im0KSsn1~TB0NxQJ-S3QEM4uCL76evvb2979m1mNaBvQEPHzrfpEfT9SF1BENJaaOh60dJjmXB4l87KN9PfJ6B-Ce50XI6wv3vnIwLMnQHP2pURWSI2~9VobIeTPhzQuYpxACXEPZikL~5Tubnp7731sRnVfSkyWLo3GUp12Oi8Fw6bzmGCY3P-YzQKApIeanAYBbFJB~6LehT3LP5HBPJS-P6vKOjvyDBmVesr~ySz8DmOQUDuc07JyD6qducBmNwTwisp-hrEXAkFSP8VuJ~dVaa899UQ-TqSGBr9SWfskzpinS~Kz7IIXdiM~JWlYh3D4IF3OUA__" alt="Happy Bride">
+                        </div>
+                        <div class="client-info">
+                            <h4 class="client-name">অনন্যা দত্ত</h4>
+                            <p class="client-role">Fashion (photoshoots)</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="testimonial-quote">
+                        <p class="bn">প্রথমবারের মতো ফটোশুট করাতে যাচ্ছিলাম, একটু নার্ভাস ছিলাম। কিন্তু মেঘার মেকআপে আমি এতটাই কনফিডেন্ট অনুভব করছিলাম যে ক্যামেরার সামনে দাঁড়ানো অনেক সহজ হয়ে গেল! ছবিগুলো দারুণ হয়েছে, সব কৃতিত্ব ওর নিখুঁত মেকআপের।</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section></div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -1309,58 +1430,11 @@
             <div class="section-title">
                 <h2>Contact Me</h2>
                 <p>Feel free to reach out for any inquiries or bookings</p>
-                <p>(click Now)</p>
             </div>
-            <style>
-                .contact-details {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 20px;
-                    justify-content: center;
-                }
-        
-                .contact-box {
-                    background: linear-gradient(135deg, #ff649a, #ff256e);
-                    color: white;
-                    padding: 20px;
-                    border-radius: 10px;
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                    text-align: center;
-                    width: 250px;
-                }
-        
-                .contact-box:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-                }
-        
-                .contact-item {
-                    text-decoration: none;
-                    color: white;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 10px;
-                }
-        
-                .contact-item i {
-                    font-size: 2.5rem;
-                    animation: pulse 1.2s ease-in-out infinite;
-                }
-        
-                @keyframes pulse {
-                    0%, 100% {
-                        transform: scale(1);
-                    }
-                    50% {
-                        transform: scale(1.1);
-                    }
-                }
-            </style>
+            
             <div class="contact-details">
                 <div class="contact-box">
-                    <a href="https://www.google.com/maps/place/Uttar+nowpara+sitola+o+monasa+matar+mondirir/@22.5619937,87.9618704,14z/data=!4m9!1m2!2m1!1sHX7M+XJ,+Nawapara,+West+Bengal+711401!3m5!1s0x3a029d719990fb23:0x6d9dd8bd6069d72c!8m2!3d22.5649694!4d87.9840646!16s%2Fg%2F11tg0q6ft8?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" class="contact-item">
+                    <a href="https://www.google.com/maps/place/Uttar+nowpara+sitola+o+monasa+matar+mondirir/@22.5619937,87.9618704,14z/data=!4m9!1m2!2m1!1sHX7M+XJ,+Nawapara,+West+Bengal+711401!3m5!1s0x3a029d719990fb23:0x6d9dd8bd6069d72c!8m2!3d22.5649694!4d87.9840646!16s%2Fg%2F11tg0q6ft8?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" class="contact-item" target="_blank">
                         <i class="fas fa-map-marker-alt"></i>
                         <p>Location (Click)</p>
                     </a>
@@ -1372,16 +1446,14 @@
                     </a>
                 </div>
                 <div class="contact-box">
-                    <a href="https://wa.me/918637345952" class="contact-item">
+                    <a href="https://wa.me/918637345952" class="contact-item" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         <p>WhatsApp (Click)</p>
                     </a>
                 </div>
-                </div>
-                </div>
-            </div>
-  </section>
-            
+            </div> 
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -1391,17 +1463,17 @@
                     <div class="footer-logo">Megha Makeup Studio</div>
                     <p>Professional makeup artist specializing in bridal, party and fashion makeup. Serving clients in Amta and surrounding areas.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li class="hide-on-mobile"><a href="#about">About</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
@@ -1423,114 +1495,136 @@
     </footer>
 
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile menu toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
             
-            mobileMenuBtn.addEventListener('click', function() {
-                if (navLinks) {
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
                     navLinks.classList.toggle('active');
-                    document.body.classList.toggle('menu-open'); // Prevent scrolling when menu is open
-                } else {
-                    console.error('Navigation links element not found.');
-                }
+                    this.querySelector('i').classList.toggle('fa-bars');
+                    this.querySelector('i').classList.toggle('fa-times');
+                    document.body.classList.toggle('no-scroll');
+                });
+            }
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                header.classList.toggle('scrolled', window.scrollY > 50);
             });
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks) {
-                        navLinks.classList.remove('active');
-                        document.body.classList.remove('menu-open');
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navLinks && navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                            document.body.classList.remove('no-scroll');
+                        }
+                    }
+                });
+            });
+            
+            // Counter animation for stats
+            function animateCounters() {
+                const counters = document.querySelectorAll('.stat-item h3');
+                const speed = 200;
+                
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText.replace('+', '').replace('%', '');
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment) + (counter.innerText.includes('+') ? '+' : (counter.innerText.includes('%') ? '%' : ''));
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target + (counter.innerText.includes('+') ? '+' : (counter.innerText.includes('%') ? '%' : ''));
+                    }
+                });
+            }
+            
+            // Start counter animation when stats section is in view
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entries[0].target);
+                }
+            }, { threshold: 0.5 });
+            
+            const statsSection = document.querySelector('.stats');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your booking request! I will contact you shortly to confirm your appointment.');
+                    this.reset();
+                });
+            }
+            
+            // Testimonial slider navigation
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const dotsContainer = document.createElement('div');
+            dotsContainer.className = 'slider-dots';
+            
+            testimonialCards.forEach((card, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.addEventListener('click', () => {
+                    card.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                        inline: 'center'
+                    });
+                });
+                dotsContainer.appendChild(dot);
+            });
+            
+            document.querySelector('.testimonial-slider').after(dotsContainer);
+            
+            // Set first dot as active initially
+            document.querySelector('.dot').classList.add('active');
+            
+            // Update active dot based on scroll position
+            const testimonialSlider = document.querySelector('.testimonial-slider');
+            const dots = document.querySelectorAll('.dot');
+            
+            testimonialSlider.addEventListener('scroll', () => {
+                const scrollPosition = testimonialSlider.scrollLeft;
+                const cardWidth = testimonialSlider.querySelector('.testimonial-card').offsetWidth;
+                const gap = 30; // Same as gap in CSS
+                
+                const activeIndex = Math.round(scrollPosition / (cardWidth + gap));
+                
+                dots.forEach((dot, index) => {
+                    if (index === activeIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
                     }
                 });
             });
         });
-
-        // Animate elements on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.service-card, .portfolio-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.classList.add('animate');
-                }
-            });
-        }
-
-        // Initialize animations
-        window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your booking request! I will contact you shortly to confirm your appointment.');
-            form.reset();
-        });
-
-        // Counter animation for stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-item h3');
-            const speed = 200;
-            
-            counters.forEach(counter => {
-                const target = +counter.innerText.replace('+', '');
-                const count = +counter.innerText;
-                const increment = target / speed;
-                
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment) + '+';
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target + '+';
-                }
-            });
-        }
-        
-        // Start counter animation when stats section is in view
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                animateCounters();
-                observer.unobserve(entries[0].target);
-            }
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
     </script>
 </body>
 </html>
